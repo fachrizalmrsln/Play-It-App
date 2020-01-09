@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Play It</string>
+    <string name="tv_show">Tv Show</string>
+    <string name="movies">Movies</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_date">Item Date</string>
+    <string name="image_poster">Image Poster</string>
 </resources>
