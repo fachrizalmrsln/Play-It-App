@@ -22,7 +22,7 @@ class TvShowFragmentTest {
     var activityTest = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testScrollAndClickItem() {
+    fun testSelectItemBehaviour() {
         onView(withId(R.id.nav_tv))
             .check(matches(isCompletelyDisplayed()))
 

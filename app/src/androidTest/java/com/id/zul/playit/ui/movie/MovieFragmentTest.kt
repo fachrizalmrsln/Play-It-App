@@ -22,7 +22,7 @@ class MovieFragmentTest {
     var activityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testScrollAndClickItem() {
+    fun testSelectItemBehaviour() {
 
         onView(withId(R.id.rv_movies))
             .check(matches(isDisplayed()))

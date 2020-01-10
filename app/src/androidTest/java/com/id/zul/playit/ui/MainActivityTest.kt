@@ -19,7 +19,7 @@ class MainActivityTest {
     var mActivityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun testBottomNav() {
+    fun testFragmentBehaviour() {
         onView(withId(R.id.nav_movie))
             .check(matches(isDisplayed()))
 
