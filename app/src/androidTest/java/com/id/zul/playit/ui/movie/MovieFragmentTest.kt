@@ -11,6 +11,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.id.zul.playit.R
 import com.id.zul.playit.ui.MainActivity
+import com.id.zul.playit.utilis.RecyclerViewItemCountAssertion
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,7 +31,7 @@ class MovieFragmentTest {
         delay(2000)
 
         onView(withId(R.id.rv_movies))
-            .check(matches(isCompletelyDisplayed()))
+            .check(RecyclerViewItemCountAssertion(20))
 
         delay(3000)
 
