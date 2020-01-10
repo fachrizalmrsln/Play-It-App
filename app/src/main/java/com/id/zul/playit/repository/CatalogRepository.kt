@@ -12,9 +12,8 @@ class CatalogRepository(
     companion object {
         fun getInstance(
             remoteRepository: RemoteRepository
-        ): CatalogRepository {
-            return CatalogRepository(remoteRepository)
-        }
+        ): CatalogRepository =
+            CatalogRepository(remoteRepository)
     }
 
     override fun getNowPlayingMovie(page: Int): LiveData<List<Movie>> =
@@ -23,4 +22,9 @@ class CatalogRepository(
     override fun getOnAirTv(page: Int): LiveData<List<Tv>> =
         remoteRepository.getOnAirTv(page)
 
+    override fun getMovieById(id: Int): LiveData<Movie> =
+        remoteRepository.getMovieById(id)
+
+    override fun getTvById(id: Int): LiveData<Tv> =
+        remoteRepository.getTvById(id)
 }

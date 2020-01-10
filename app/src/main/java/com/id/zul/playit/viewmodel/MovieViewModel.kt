@@ -7,7 +7,6 @@ import com.id.zul.playit.repository.CatalogRepository
 
 class MovieViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
-    fun getNowPlaying(page: Int): LiveData<List<Movie>> {
-        return catalogRepository.getNowPlayingMovie(page)
-    }
+    fun getNowPlaying(page: Int): LiveData<List<Movie>> =
+        catalogRepository.getNowPlayingMovie(page)
 }

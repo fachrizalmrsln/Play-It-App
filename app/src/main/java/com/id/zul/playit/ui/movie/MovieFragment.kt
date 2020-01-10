@@ -16,10 +16,12 @@ import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.MovieItemAdapter
 import com.id.zul.playit.model.movie.Movie
+import com.id.zul.playit.ui.detail.DetailActivity
 import com.id.zul.playit.viewmodel.MovieViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
 class MovieFragment : Fragment() {
@@ -99,10 +101,10 @@ class MovieFragment : Fragment() {
 
     private fun setRecyclerView(view: View) {
         adapterMovie = MovieItemAdapter(view.context) {
-            //            startActivity<DetailActivity>(
-//                "identify" to "movie",
-//                "data_id" to it.id
-//            )
+            startActivity<DetailActivity>(
+                "identify" to "movie",
+                "data_id" to it.id
+            )
         }
 
         if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)

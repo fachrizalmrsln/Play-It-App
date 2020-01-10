@@ -7,7 +7,6 @@ import com.id.zul.playit.repository.CatalogRepository
 
 class TvViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
-    fun getOnAir(page: Int): LiveData<List<Tv>> {
-        return catalogRepository.getOnAirTv(page)
-    }
+    fun getOnAir(page: Int): LiveData<List<Tv>> =
+        catalogRepository.getOnAirTv(page)
 }

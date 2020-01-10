@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.id.zul.playit.di.Injection
 import com.id.zul.playit.repository.CatalogRepository
+import com.id.zul.playit.viewmodel.DetailViewModel
 import com.id.zul.playit.viewmodel.MovieViewModel
 import com.id.zul.playit.viewmodel.TvViewModel
 
@@ -34,6 +35,8 @@ class ViewModelFactory constructor(private val catalogRepository: CatalogReposit
                 MovieViewModel(catalogRepository) as (T)
             modelClass.isAssignableFrom(TvViewModel::class.java) ->
                 TvViewModel(catalogRepository) as (T)
+            modelClass.isAssignableFrom(DetailViewModel::class.java) ->
+                DetailViewModel(catalogRepository) as (T)
             else -> throw IllegalArgumentException("Error view model from " + modelClass.name)
         }
     }

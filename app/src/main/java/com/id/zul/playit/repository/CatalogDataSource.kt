@@ -10,4 +10,8 @@ interface CatalogDataSource {
 
     fun getOnAirTv(page: Int): LiveData<List<Tv>>
 
+    fun getMovieById(id: Int): LiveData<Movie>
+
+    fun getTvById(id: Int): LiveData<Tv>
+
 }

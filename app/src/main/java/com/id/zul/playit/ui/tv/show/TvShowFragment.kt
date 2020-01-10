@@ -16,10 +16,12 @@ import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.mtv.data.model.tv.Tv
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.TvItemAdapter
+import com.id.zul.playit.ui.detail.DetailActivity
 import com.id.zul.playit.viewmodel.TvViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
 class TvShowFragment : Fragment() {
@@ -99,10 +101,10 @@ class TvShowFragment : Fragment() {
 
     private fun setRecyclerView(view: View) {
         adapterMovie = TvItemAdapter(view.context) {
-            //            startActivity<DetailActivity>(
-//                "identify" to "movie",
-//                "data_id" to it.id
-//            )
+            startActivity<DetailActivity>(
+                "identify" to "tv",
+                "data_id" to it.id
+            )
         }
 
         if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)

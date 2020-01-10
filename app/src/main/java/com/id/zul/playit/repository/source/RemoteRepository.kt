@@ -49,10 +49,10 @@ class RemoteRepository {
     fun getOnAirTv(page: Int): LiveData<List<Tv>> {
         val dataOnAirTv: MutableLiveData<List<Tv>> = MutableLiveData()
 
-        val movieResponseCall: Call<TvResponse> =
+        val tvResponseCall: Call<TvResponse> =
             ApiClient.getClient().create(ApiService::class.java)
                 .getOnAirTv(page)
-        movieResponseCall.enqueue(object : Callback<TvResponse> {
+        tvResponseCall.enqueue(object : Callback<TvResponse> {
             override fun onFailure(call: Call<TvResponse>, t: Throwable) {
                 Log.d("Fail", t.toString())
                 dataOnAirTv.value = null
@@ -69,6 +69,56 @@ class RemoteRepository {
 
         })
         return dataOnAirTv
+    }
+
+    fun getMovieById(id: Int): LiveData<Movie> {
+        val movieById: MutableLiveData<Movie> = MutableLiveData()
+
+        val movieResponseCall: Call<Movie> =
+            ApiClient.getClient().create(ApiService::class.java)
+                .getMovieById(id)
+        movieResponseCall.enqueue(object : Callback<Movie> {
+            override fun onFailure(call: Call<Movie>, t: Throwable) {
+                Log.d("Fail", t.toString())
+                movieById.value = null
+            }
+
+            override fun onResponse(
+                call: Call<Movie>,
+                movieResponse: Response<Movie>
+            ) {
+                movieResponse.body()?.let {
+                    movieById.value = it
+                }
+            }
+
+        })
+        return movieById
+    }
+
+    fun getTvById(id: Int): LiveData<Tv> {
+        val tvById: MutableLiveData<Tv> = MutableLiveData()
+
+        val tvResponseCall: Call<Tv> =
+            ApiClient.getClient().create(ApiService::class.java)
+                .getTvById(id)
+        tvResponseCall.enqueue(object : Callback<Tv> {
+            override fun onFailure(call: Call<Tv>, t: Throwable) {
+                Log.d("Fail", t.toString())
+                tvById.value = null
+            }
+
+            override fun onResponse(
+                call: Call<Tv>,
+                movieResponse: Response<Tv>
+            ) {
+                movieResponse.body()?.let {
+                    tvById.value = it
+                }
+            }
+
+        })
+        return tvById
     }
 
 }
