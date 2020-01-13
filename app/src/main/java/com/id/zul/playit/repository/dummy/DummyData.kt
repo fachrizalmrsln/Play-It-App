@@ -214,184 +214,184 @@ object DummyMovie {
     fun DataTv(): List<Tv> {
         return listOf(
             Tv(
-                id = 1,
-                name = "The Walking Dead",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
-                first_air_date = "October 31, 2010"
+                id = 44217,
+                name = "Vikings",
+                vote_average = 7.5,
+                poster_path = "/ff1zhqvwfS5HvRNcA5UFrH0PA2q.jpg",
+                backdrop_path = "/aq2yEMgRQBPfRkrO0Repo2qhUAT.jpg",
+                overview = "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar's band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+                first_air_date = "2013-03-03"
             ),
             Tv(
-                id = 2,
+                id = 1412,
                 name = "Arrow",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
+                vote_average = 5.9,
+                poster_path = "/gKG5QGz5Ngf8fgWpBsWtlg5L2SF.jpg",
+                backdrop_path = "/dXTyVDTIgeByvUOUEiHjbi8xX9A.jpg",
                 overview = "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
-                first_air_date = "October 10, 2012"
+                first_air_date = "2012-10-10"
             ),
             Tv(
-                id = 3,
-                name = "Doom Patrol",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "When Alita awakens with no memory of who she is in a future world she does not recognize, she is taken in by Ido, a compassionate doctor who realizes that somewhere in this abandoned cyborg shell is the heart and soul of a young woman with an extraordinary past.",
-                first_air_date = "December 12, 2016"
+                id = 57243,
+                name = "Doctor Who",
+                vote_average = 7.0,
+                poster_path = "/cDDb7WA2i7cENhkEEjXEDrXGyNL.jpg",
+                backdrop_path = "/mQ9yeCuofNatSyErUKAPD1uOq8Q.jpg",
+                overview = "The Doctor is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living—more of a hobby actually, and the Doctor's very, very good at it.",
+                first_air_date = "2005-03-26"
             ),
             Tv(
-                id = 4,
-                name = "Dragon Ball",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Five years have passed since the fight with Piccolo Jr., and Goku now has a son, Gohan. The peace is interrupted when an alien named Raditz arrives on Earth in a spacecraft and tracks down Goku, revealing to him that that they are members of a near-extinct warrior race called the Saiyans.",
-                first_air_date = "April 26, 1989"
-            ),
-            Tv(
-                id = 5,
-                name = "Fairytail",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Jack is about to experience the most magical night of his life, when his fairy god mother helps get him to the prom to finally get his happy ending.",
-                first_air_date = "January 1, 1998"
-            ),
-            Tv(
-                id = 6,
-                name = "Family Guy",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
-                first_air_date = "January 31, 1999"
-            ),
-            Tv(
-                id = 7,
-                name = "The Flash",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \\\"meta-human\\\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
-                first_air_date = "October 7, 2014"
-            ),
-            Tv(
-                id = 8,
-                name = "God",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "A morally corrupt judge suffers a breakdown and believes that God is speaking directly to him, compelling him onto a path of vigilante justice.",
-                first_air_date = "August 28, 2014"
-            ),
-            Tv(
-                id = 9,
-                name = "Gotham",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Before there was Batman, there was GOTHAM. Everyone knows the name Commissioner Gordon. He is one of the crime world's greatest foes, a man whose reputation is synonymous with law and order. But what is known of Gordon's story and his rise from rookie detective to Police Commissioner? What did it take to navigate the multiple layers of corruption that secretly ruled Gotham City, the spawning ground of the world's most iconic villains? And what circumstances created them – the larger-than-life personas who would become Catwoman, The Penguin, The Riddler, Two-Face and The Joker?",
-                first_air_date = "September 22, 2014"
-            ),
-            Tv(
-                id = 10,
-                name = "Grey Anatomy",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
-                first_air_date = "March 27, 2005"
-            ),
-            Tv(
-                id = 11,
-                name = "Hanna",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "A 16-year-old girl raised by her father to be the perfect assassin is dispatched on a mission across Europe. Tracked by a ruthless operatives, she faces startling revelations about her existence and questions about her humanity.",
-                first_air_date = "April 7, 2011"
-            ),
-            Tv(
-                id = 12,
-                name = "Iron Fist",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Danny Rand resurfaces 15 years after being presumed dead. Now, with the power of the Iron Fist, he seeks to reclaim his past and fulfill his destiny.",
-                first_air_date = "March 17, 2017"
-            ),
-            Tv(
-                id = 13,
-                name = "Naruto Shipudden",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Naruto Shippuuden is the continuation of the original animated TV series Naruto.The story revolves around an older and slightly more matured Uzumaki Naruto and his quest to save his friend Uchiha Sasuke from the grips of the snake-like Shinobi, Orochimaru. After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work, though it will not be easy, as He has amassed a few (more dangerous) enemies, in the likes of the shinobi organization; Akatsuki.",
-                first_air_date = "February 15, 2007"
-            ),
-            Tv(
-                id = 14,
-                name = "NCIS",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has a shred of evidence connected to Navy and Marine Corps personnel, regardless of rank or position.",
-                first_air_date = "September 23, 2003"
-            ),
-            Tv(
-                id = 15,
-                name = "Riverdale",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "An FBI agent teams with the town's veteran game tracker to investigate a murder that occurred on a Native American reservation.",
-                first_air_date = "August 3, 2017"
-            ),
-            Tv(
-                id = 16,
-                name = "Shameless",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Brandon is a New Yorker who shuns intimacy with women but feeds his desires with a compulsive addiction to sex. When his wayward younger sister moves into his apartment stirring memories of their shared painful",
-                first_air_date = "October 2, 2011"
-            ),
-            Tv(
-                id = 17,
-                name = "Supergirl",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Twenty-four-year-old Kara Zor-El, who was taken in by the Danvers family when she was 13 after being sent away from Krypton, must learn to embrace her powers after previously hiding them. The Danvers teach her",
-                first_air_date = "October 26, 2015"
-            ),
-            Tv(
-                id = 18,
+                id = 1622,
                 name = "Supernatural",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil.",
-                first_air_date = "September 13, 2005"
+                vote_average = 7.4,
+                poster_path = "/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg",
+                backdrop_path = "/o9OKe3M06QMLOzTl3l6GStYtnE9.jpg",
+                overview = "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+                first_air_date = "2005-09-13"
             ),
             Tv(
-                id = 19,
-                name = "The Simpson",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands.",
-                first_air_date = "December 17, 1989"
+                id = 4057,
+                name = "Criminal Minds",
+                vote_average = 7.4,
+                poster_path = "/7TCwgX7oQKxcWYEhSPRmaHe6ULN.jpg",
+                backdrop_path = "/mzyLxbwy5jOveyfsbC1OWGp78NV.jpg",
+                overview = "An elite team of FBI profilers analyze the country's most twisted criminal minds, anticipating their next moves before they strike again. The Behavioral Analysis Unit's most experienced agent is David Rossi, a founding member of the BAU who returns to help the team solve new cases.",
+                first_air_date = "2005-09-22"
             ),
             Tv(
-                id = 20,
-                name = "The Umbrella",
-                vote_average = 7.1,
-                poster_path = "poster",
-                backdrop_path = "backdrop",
-                overview = "A dysfunctional family of superheroes comes together to solve the mystery of their father's death, the threat of the apocalypse and more.",
-                first_air_date = "February 15, 2019"
+                id = 93149,
+                name = "Plunderer",
+                vote_average = 8.0,
+                poster_path = "/xiV695sPlizxNmydomcfbmLDXfA.jpg",
+                backdrop_path = "/7BP3aJUCk8Iv20YFAqHcbXpTMwR.jpg",
+                overview = "In a post-apocalyptic world dominated by the so-called \"Numbers,\" each human will have their identity branded with their own \"Count,\" which could define any number related to their life. May it be one's walked distance or amount of compliments given to them by others, this Count could lead them to the abyss when it has dropped to zero.\n\nIn the year 305 of the Alcian calendar, Hina has inherited a mission from her Mother, whose Count has depreciated to zero, to search for the Legendary Red Baron. In her adventure, she meets a half-masked swordsman named Licht who tries to hide his identity, as he is known as a degenerate for having an incredibly low Count.",
+                first_air_date = "2020-01-08"
+            ),
+            Tv(
+                id = 94649,
+                name = "Infinite Dendrogram",
+                vote_average = 0.0,
+                poster_path = "/uOjV2pIo0dpeTlSIyWWKRFhRMtY.jpg",
+                backdrop_path = "/c26SiyLqlWeirNLpRn0JA2BCjRX.jpg",
+                overview = "",
+                first_air_date = "2020-01-09"
+            ),
+            Tv(
+                id = 17610,
+                name = "NCIS: Los Angeles",
+                vote_average = 6.9,
+                poster_path = "/p0doUtM8RhXcAwHs6VmMZMQKpai.jpg",
+                backdrop_path = "/j4ltPl0cHMd16UO80vbxFx1Td1w.jpg",
+                overview = "The exploits of the Los Angeles–based Office of Special Projects (OSP), an elite division of the Naval Criminal Investigative Service that specializes in undercover assignments.",
+                first_air_date = "2009-09-22"
+            ),
+            Tv(
+                id = 44006,
+                name = "Chicago Fire",
+                vote_average = 7.6,
+                poster_path = "/g9aoiYLbE3IrDiMms5fU4lv6BR4.jpg",
+                backdrop_path = "/gdIFeiJGsywKt6scyILMZI1tMl4.jpg",
+                overview = "An edge-of-your-seat view into the lives of everyday heroes committed to one of America's noblest professions. For the firefighters, rescue squad and paramedics of Chicago Firehouse 51, no occupation is more stressful or dangerous, yet so rewarding and exhilarating. These courageous men and women are among the elite who forge headfirst into danger when everyone else is running the other way and whose actions make the difference between life and death.",
+                first_air_date = "2012-10-10"
+            ),
+            Tv(
+                id = 62643,
+                name = "DC's Legends of Tomorrow",
+                vote_average = 6.4,
+                poster_path = "/qNgAcg4gNYbZ9mySLB9ZX4ehZb6.jpg",
+                backdrop_path = "/xOcuDnxTTqNT2CuFNy5VVc67tG4.jpg",
+                overview = "When heroes alone are not enough ... the world needs legends. Having seen the future, one he will desperately try to prevent from happening, time-traveling rogue Rip Hunter is tasked with assembling a disparate group of both heroes and villains to confront an unstoppable threat — one in which not only is the planet at stake, but all of time itself. Can this ragtag team defeat an immortal threat unlike anything they have ever known?",
+                first_air_date = "2016-01-21"
+            ),
+            Tv(
+                id = 96402,
+                name = "BOFURI: I Don't Want to Get Hurt, So I'll Max Out My Defense",
+                vote_average = 0.0,
+                poster_path = "/eKr4p1jBL081BwqWJ1zywtJIqMF.jpg",
+                backdrop_path = "/fckcHUdW3oBsyt4H05xGmWFbZv9.jpg",
+                overview = "Honjou Kaede is invited by her friend Shiramine Risa to play a virtual reality MMO game with her. While Kaede doesn't dislike games, what she really, truly dislikes is being in pain. She creates a character named Maple, and decides to put all her points in VIT to minimize pain. As a result, she moves slowly, can't use magic, and even a rabbit can get the best of her. But as it turns out, she acquires a skill known as \"Absolute Defense\" as a result of her pumping points into VIT, as well as a \"Counter Skill\" that works against special moves. Now, with her ability to nullify all damage, she goes on adventures.",
+                first_air_date = "2020-01-08"
+            ),
+            Tv(
+                id = 60572,
+                name = "Pokémon",
+                vote_average = 6.6,
+                poster_path = "/2pcTUs20ysCdA6DZclaPmGXD6ph.jpg",
+                backdrop_path = "/qyMhVZKYy4ionYsbjDZNSF75fPu.jpg",
+                overview = "Join Ash Ketchum, accompanied by his partner Pikachu, as he travels through many regions, meets new friends and faces new challenges on his quest to become a Pokémon Master.",
+                first_air_date = "1997-04-01"
+            ),
+            Tv(
+                id = 1421,
+                name = "Modern Family",
+                vote_average = 7.3,
+                poster_path = "/fCiOen2bpru5JhzlaNkaNWNd9eP.jpg",
+                backdrop_path = "/x4lxFIhhrDI4nWtV8osnYwbGESV.jpg",
+                overview = "The Pritchett-Dunphy-Tucker clan is a wonderfully large and blended family. They give us an honest and often hilarious look into the sometimes warm, sometimes twisted, embrace of the modern family.",
+                first_air_date = "2009-09-23"
+            ),
+            Tv(
+                id = 79460,
+                name = "Legacies",
+                vote_average = 7.9,
+                poster_path = "/1Uhoi348GEg4DObGrVLNUqtKtdu.jpg",
+                backdrop_path = "/wblSifvXAlqAYqEUoXmhpzeau7b.jpg",
+                overview = "In a place where young witches, vampires, and werewolves are nurtured to be their best selves in spite of their worst impulses, Klaus Mikaelson’s daughter, 17-year-old Hope Mikaelson, Alaric Saltzman’s twins, Lizzie and Josie Saltzman, among others, come of age into heroes and villains at The Salvatore School for the Young and Gifted.",
+                first_air_date = "2018-10-25"
+            ),
+            Tv(
+                id = 71712,
+                name = "The Good Doctor",
+                vote_average = 7.8,
+                poster_path = "/53P8oHo9cfOsgb1cLxBi4pFY0ja.jpg",
+                backdrop_path = "/mZjZgY6ObiKtVuKVDrnS9VnuNlE.jpg",
+                overview = "A young surgeon with Savant syndrome is recruited into the surgical unit of a prestigious hospital. The question will arise: can a person who doesn't have the ability to relate to people actually save their lives?",
+                first_air_date = "2017-09-25"
+            ),
+            Tv(
+                id = 2661,
+                name = "Kamen Rider",
+                vote_average = 5.7,
+                poster_path = "/o57T19zgZakEpre3d9ddy1UZonp.jpg",
+                backdrop_path = "/A6euKtibc99zyWNy3TPbXA31h1l.jpg",
+                overview = "A Japanese anthology series centered around a man who transforms into a bug-themed superhero.",
+                first_air_date = "1971-04-03"
+            ),
+            Tv(
+                id = 88408,
+                name = "The New Pope",
+                vote_average = 10.0,
+                poster_path = "/s1itw3c0Yu5KcljY6SNCfnq8kfn.jpg",
+                backdrop_path = "/4gsc3rUPFpJfX4sadlkDQ4XSMSk.jpg",
+                overview = "As Pope Pius XIII hangs between life and death in a coma, charming and sophisticated moderate English aristocrat Sir John Brannox is placed on the papal throne and adopts the name John Paul III. A sequel series to “The Young Pope.”",
+                first_air_date = "2020-01-13"
+            ),
+            Tv(
+                id = 62688,
+                name = "Supergirl",
+                vote_average = 6.0,
+                poster_path = "/4ka8vAzAFUZFKxWyfGfwVcSXuZo.jpg",
+                backdrop_path = "/3x1lVyxtsLKsZyR2E3qRe1EAXG4.jpg",
+                overview = "Twenty-four-year-old Kara Zor-El, who was taken in by the Danvers family when she was 13 after being sent away from Krypton, must learn to embrace her powers after previously hiding them. The Danvers teach her to be careful with her powers, until she has to reveal them during an unexpected disaster, setting her on her journey of heroism.",
+                first_air_date = "2015-10-26"
+            ),
+            Tv(
+                id = 84661,
+                name = "The Outsider",
+                vote_average = 0.0,
+                poster_path = "/aMiPwPQjQI1EZN3xP2V0sSU37dc.jpg",
+                backdrop_path = "/lmlsqpAfDZnZumcFhbsTrOy9uNZ.jpg",
+                overview = "When an insidious supernatural force edges its way into a seemingly straightforward investigation into the gruesome murder of a young boy, it leads a seasoned cop and an unorthodox investigator to question everything they believe in.",
+                first_air_date = "2020-01-12"
+            ),
+            Tv(
+                id = 34307,
+                name = "Shameless",
+                vote_average = 7.9,
+                poster_path = "/m2gf7SYOq9z30Q1dJFMF51DfrmF.jpg",
+                backdrop_path = "/1ccgQ6IJyEc8UHPtGeFFeRqMVnc.jpg",
+                overview = "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank's not at the bar spending what little money they have, he's passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+                first_air_date = "2011-01-09"
             )
         )
     }
