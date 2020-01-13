@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.R
-import com.id.zul.playit.utilis.ConvertDate
-import com.id.zul.playit.utilis.Network
+import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.utils.ConvertDate
+import com.id.zul.playit.utils.Network
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.find
 

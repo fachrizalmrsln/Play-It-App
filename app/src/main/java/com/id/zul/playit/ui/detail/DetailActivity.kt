@@ -11,12 +11,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
-import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.R
 import com.id.zul.playit.model.movie.Movie
-import com.id.zul.playit.utilis.ConvertDate
-import com.id.zul.playit.utilis.ConvertDecimal
-import com.id.zul.playit.utilis.Network
+import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.utils.ConvertDate
+import com.id.zul.playit.utils.ConvertDecimal
+import com.id.zul.playit.utils.Network
 import com.id.zul.playit.viewmodel.DetailViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import com.squareup.picasso.Picasso

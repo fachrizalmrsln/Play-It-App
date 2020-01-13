@@ -3,10 +3,10 @@ package com.id.zul.playit.repository.source
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.id.zul.playit.model.tv.show.Tv
-import com.id.zul.playit.model.tv.show.TvResponse
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.movie.MovieResponse
+import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.show.TvResponse
 import com.id.zul.playit.network.ApiClient
 import com.id.zul.playit.network.ApiService
 import retrofit2.Call

@@ -11,7 +11,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.id.zul.playit.R
 import com.id.zul.playit.ui.MainActivity
-import com.id.zul.playit.utilis.RecyclerViewItemCountAssertion
+import com.id.zul.playit.utils.RecyclerViewItemCountAssertion
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -13,9 +13,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
-import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.TvItemAdapter
+import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.ui.detail.DetailActivity
 import com.id.zul.playit.viewmodel.TvViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory

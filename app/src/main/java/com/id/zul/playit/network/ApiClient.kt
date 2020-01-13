@@ -1,6 +1,6 @@
 package com.id.zul.playit.network
 
-import com.id.zul.playit.utilis.Network
+import com.id.zul.playit.utils.Network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

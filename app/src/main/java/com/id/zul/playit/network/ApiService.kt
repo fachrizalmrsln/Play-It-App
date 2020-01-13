@@ -1,10 +1,10 @@
 package com.id.zul.playit.network
 
-import com.id.zul.playit.model.tv.show.Tv
-import com.id.zul.playit.model.tv.show.TvResponse
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.movie.MovieResponse
-import com.id.zul.playit.utilis.Network
+import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.show.TvResponse
+import com.id.zul.playit.utils.Network
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

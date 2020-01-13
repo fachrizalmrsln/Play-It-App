@@ -1,4 +1,4 @@
-package com.id.zul.playit.utilis
+package com.id.zul.playit.utils
 
 object Network {
     const val API_KEY = "66e3f1fa9707fd7de38b047ddf2dfbe1"

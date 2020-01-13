@@ -1,4 +1,4 @@
-package com.id.zul.playit.utilis
+package com.id.zul.playit.utils
 
 import android.annotation.SuppressLint
 import java.text.DecimalFormat

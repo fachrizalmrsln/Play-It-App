@@ -1,11 +1,11 @@
-package com.id.zul.playit.utilis
+package com.id.zul.playit.utils
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.NoMatchingViewException
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
-import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.core.Is.`is`
 import org.junit.Assert.assertNotNull
 
 class RecyclerViewItemCountAssertion(private val itemSize: Int) : ViewAssertion {
