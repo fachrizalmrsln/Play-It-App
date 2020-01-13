@@ -1,4 +1,4 @@
-package com.id.zul.playit.ui.tv.show
+package com.id.zul.playit.ui.tv
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
@@ -17,7 +17,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class TvShowFragmentTest {
+class TvFragmentTest {
 
     @get: Rule
     var activityTest = ActivityTestRule(MainActivity::class.java)
