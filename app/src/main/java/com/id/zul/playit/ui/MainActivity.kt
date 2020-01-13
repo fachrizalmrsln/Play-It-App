@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.id.zul.playit.R
 import com.id.zul.playit.ui.movie.MovieFragment
-import com.id.zul.playit.ui.tv.show.TvShowFragment
+import com.id.zul.playit.ui.tv.TvFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         bottom_nav_main.setOnNavigationItemSelectedListener { items ->
             when (items.itemId) {
                 R.id.nav_movie -> openFragment(MovieFragment.getInstance())
-                R.id.nav_tv -> openFragment(TvShowFragment.getInstance())
+                R.id.nav_tv -> openFragment(TvFragment.getInstance())
             }
             true
         }

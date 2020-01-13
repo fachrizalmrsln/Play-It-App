@@ -1,4 +1,4 @@
-package com.id.zul.playit.ui.tv.show
+package com.id.zul.playit.ui.tv
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -15,16 +15,16 @@ import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.TvItemAdapter
-import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.ui.detail.DetailActivity
-import com.id.zul.playit.viewmodel.ui.tv.TvViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
+import com.id.zul.playit.viewmodel.ui.tv.TvViewModel
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
-class TvShowFragment : Fragment() {
+class TvFragment : Fragment() {
 
     private lateinit var viewModel: TvViewModel
 
@@ -38,7 +38,7 @@ class TvShowFragment : Fragment() {
 
     companion object {
         fun getInstance(): Fragment {
-            return TvShowFragment()
+            return TvFragment()
         }
     }
 

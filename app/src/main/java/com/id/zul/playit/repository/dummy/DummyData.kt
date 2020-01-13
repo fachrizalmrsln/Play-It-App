@@ -1,7 +1,7 @@
 package com.id.zul.playit.repository.dummy
 
 import com.id.zul.playit.model.movie.Movie
-import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.Tv
 
 object DummyData {
 

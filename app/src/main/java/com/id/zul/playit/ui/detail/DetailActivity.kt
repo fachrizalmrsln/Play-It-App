@@ -13,12 +13,12 @@ import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.playit.R
 import com.id.zul.playit.model.movie.Movie
-import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.utils.ConvertDate
 import com.id.zul.playit.utils.ConvertDecimal
 import com.id.zul.playit.utils.Network
-import com.id.zul.playit.viewmodel.ui.detail.DetailViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
+import com.id.zul.playit.viewmodel.ui.detail.DetailViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.jetbrains.anko.find

@@ -1,4 +1,4 @@
-package com.id.zul.playit.model.tv.show
+package com.id.zul.playit.model.tv
 
 data class Tv(
     val backdrop_path: String,
