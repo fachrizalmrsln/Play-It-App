@@ -1,4 +1,4 @@
-package com.id.zul.playit.viewmodel.ui
+package com.id.zul.playit.viewmodel.ui.tv
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import com.id.zul.playit.repository.dummy.DummyData
 
 class TvViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
-    val dataTv = DummyData.dataTv()
+    val dummyTv = DummyData.dataTv()
 
     fun getOnAir(page: Int): LiveData<List<Tv>> =
         catalogRepository.getOnAirTv(page)

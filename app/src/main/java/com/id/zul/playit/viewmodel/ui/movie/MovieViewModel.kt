@@ -1,4 +1,4 @@
-package com.id.zul.playit.viewmodel.ui
+package com.id.zul.playit.viewmodel.ui.movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

@@ -17,7 +17,7 @@ import com.id.zul.playit.R
 import com.id.zul.playit.adapter.MovieItemAdapter
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.ui.detail.DetailActivity
-import com.id.zul.playit.viewmodel.ui.MovieViewModel
+import com.id.zul.playit.viewmodel.ui.movie.MovieViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.toolbar.*

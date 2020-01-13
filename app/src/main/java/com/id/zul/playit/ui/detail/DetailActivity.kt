@@ -17,7 +17,7 @@ import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.utils.ConvertDate
 import com.id.zul.playit.utils.ConvertDecimal
 import com.id.zul.playit.utils.Network
-import com.id.zul.playit.viewmodel.ui.DetailViewModel
+import com.id.zul.playit.viewmodel.ui.detail.DetailViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
