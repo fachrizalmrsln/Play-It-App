@@ -1,10 +1,10 @@
 package com.id.zul.playit.viewmodel.ui.tv
 
 import com.id.zul.playit.repository.CatalogRepository
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.mockito.Mockito.mock
 
 class TvViewModelTest {
