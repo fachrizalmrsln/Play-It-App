@@ -24,7 +24,6 @@ class MovieFragmentTest {
 
     @Test
     fun testSelectItemBehaviour() {
-
         onView(withId(R.id.rv_movies))
             .check(matches(isDisplayed()))
 
