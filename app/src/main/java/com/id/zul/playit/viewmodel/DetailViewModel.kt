@@ -13,5 +13,4 @@ class DetailViewModel(private val catalogRepository: CatalogRepository) : ViewMo
 
     fun getTvById(id: Int): LiveData<Tv> =
         catalogRepository.getTvById(id)
-
 }
