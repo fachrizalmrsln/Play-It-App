@@ -3,9 +3,9 @@ package com.id.zul.playit.repository.dummy
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.show.Tv
 
-object DummyMovie {
+object DummyData {
 
-    fun DataMovie(): List<Movie> {
+    fun dataMovie(): List<Movie> {
         return listOf(
             Movie(
                 id = 419704,
@@ -211,7 +211,7 @@ object DummyMovie {
 
     }
 
-    fun DataTv(): List<Tv> {
+    fun dataTv(): List<Tv> {
         return listOf(
             Tv(
                 id = 44217,

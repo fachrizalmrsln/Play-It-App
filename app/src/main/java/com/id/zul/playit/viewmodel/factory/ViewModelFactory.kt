@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.id.zul.playit.di.Injection
 import com.id.zul.playit.repository.CatalogRepository
-import com.id.zul.playit.viewmodel.DetailViewModel
-import com.id.zul.playit.viewmodel.MovieViewModel
-import com.id.zul.playit.viewmodel.TvViewModel
+import com.id.zul.playit.viewmodel.ui.DetailViewModel
+import com.id.zul.playit.viewmodel.ui.MovieViewModel
+import com.id.zul.playit.viewmodel.ui.TvViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory constructor(private val catalogRepository: CatalogRepository) :

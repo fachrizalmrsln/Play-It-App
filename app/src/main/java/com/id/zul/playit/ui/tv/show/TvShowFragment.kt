@@ -17,7 +17,7 @@ import com.id.zul.playit.R
 import com.id.zul.playit.adapter.TvItemAdapter
 import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.ui.detail.DetailActivity
-import com.id.zul.playit.viewmodel.TvViewModel
+import com.id.zul.playit.viewmodel.ui.TvViewModel
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.toolbar.*
