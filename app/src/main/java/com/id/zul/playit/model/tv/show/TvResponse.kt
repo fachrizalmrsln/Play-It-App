@@ -1,4 +1,4 @@
-package com.id.zul.mtv.data.model.tv
+package com.id.zul.playit.model.tv.show
 
 data class TvResponse(
     val page: Int,

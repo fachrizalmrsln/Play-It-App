@@ -1,7 +1,7 @@
 package com.id.zul.playit.network
 
-import com.id.zul.mtv.data.model.tv.Tv
-import com.id.zul.mtv.data.model.tv.TvResponse
+import com.id.zul.playit.model.tv.show.Tv
+import com.id.zul.playit.model.tv.show.TvResponse
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.movie.MovieResponse
 import com.id.zul.playit.utilis.Network

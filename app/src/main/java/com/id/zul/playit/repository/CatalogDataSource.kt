@@ -1,7 +1,7 @@
 package com.id.zul.playit.repository
 
 import androidx.lifecycle.LiveData
-import com.id.zul.mtv.data.model.tv.Tv
+import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.model.movie.Movie
 
 interface CatalogDataSource {

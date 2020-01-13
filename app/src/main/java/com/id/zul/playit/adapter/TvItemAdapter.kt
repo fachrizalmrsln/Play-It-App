@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.id.zul.mtv.data.model.tv.Tv
+import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.R
 import com.id.zul.playit.utilis.ConvertDate
 import com.id.zul.playit.utilis.Network

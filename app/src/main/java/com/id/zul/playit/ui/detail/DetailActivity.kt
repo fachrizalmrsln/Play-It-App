@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
-import com.id.zul.mtv.data.model.tv.Tv
+import com.id.zul.playit.model.tv.show.Tv
 import com.id.zul.playit.R
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.utilis.ConvertDate
