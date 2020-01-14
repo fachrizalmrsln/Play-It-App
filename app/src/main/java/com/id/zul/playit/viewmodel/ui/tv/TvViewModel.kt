@@ -8,7 +8,7 @@ import com.id.zul.playit.repository.source.dummy.DummyData
 
 class TvViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
-    val dummyTv = DummyData.dataTv()
+    val dummyTv = DummyData.dummyTv()
 
     fun getOnAir(page: Int): LiveData<List<Tv>> =
         catalogRepository.getOnAirTv(page)

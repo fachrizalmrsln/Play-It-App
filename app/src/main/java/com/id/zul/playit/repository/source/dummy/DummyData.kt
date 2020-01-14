@@ -5,7 +5,7 @@ import com.id.zul.playit.model.tv.Tv
 
 object DummyData {
 
-    fun dataMovie(): List<Movie> {
+    fun dummyMovie(): List<Movie> {
         return listOf(
             Movie(
                 id = 419704,
@@ -211,7 +211,7 @@ object DummyData {
 
     }
 
-    fun dataTv(): List<Tv> {
+    fun dummyTv(): List<Tv> {
         return listOf(
             Tv(
                 id = 44217,
@@ -395,4 +395,19 @@ object DummyData {
             )
         )
     }
+
+    fun dummyMovieById(id: Int): Movie {
+        val movie = dummyMovie()
+        return movie.filter {
+            it.id == id
+        }[0]
+    }
+
+    fun dummyTvById(id: Int): Tv {
+        val tv = dummyTv()
+        return tv.filter {
+            it.id == id
+        }[0]
+    }
+
 }

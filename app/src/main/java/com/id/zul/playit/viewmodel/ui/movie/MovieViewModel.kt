@@ -8,7 +8,7 @@ import com.id.zul.playit.repository.source.dummy.DummyData
 
 class MovieViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
-    val dummyMovie = DummyData.dataMovie()
+    val dummyMovie = DummyData.dummyMovie()
 
     fun getNowPlaying(page: Int): LiveData<List<Movie>> =
         catalogRepository.getNowPlayingMovie(page)
