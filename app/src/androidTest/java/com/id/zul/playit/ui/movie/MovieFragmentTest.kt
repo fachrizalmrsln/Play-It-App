@@ -64,7 +64,7 @@ class MovieFragmentTest {
 
     @After
     fun tearDown() {
-        IdlingRegistry.getInstance().register(IdlingResource.myIdle)
+        IdlingRegistry.getInstance().unregister(IdlingResource.myIdle)
     }
 
     // i'm keep using delay just for making sure the data show up properly before the other action
