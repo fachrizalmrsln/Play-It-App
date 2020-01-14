@@ -9,6 +9,7 @@ import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.model.tv.TvResponse
 import com.id.zul.playit.network.ApiClient
 import com.id.zul.playit.network.ApiService
+import com.id.zul.playit.utils.IdlingResource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +25,8 @@ class RemoteRepository {
     fun getNowPlayingMovie(page: Int): LiveData<List<Movie>> {
         val dataNowPlayingMovie: MutableLiveData<List<Movie>> = MutableLiveData()
 
+        IdlingResource.increment()
+
         val movieResponseCall: Call<MovieResponse> =
             ApiClient.getClient().create(ApiService::class.java)
                 .getNowPlayingMovies(page)
@@ -31,6 +34,7 @@ class RemoteRepository {
             override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
                 Log.d("Fail", t.toString())
                 dataNowPlayingMovie.value = null
+                IdlingResource.decrement()
             }
 
             override fun onResponse(
@@ -40,6 +44,7 @@ class RemoteRepository {
                 movieResponse.body()?.let {
                     dataNowPlayingMovie.value = it.results
                 }
+                IdlingResource.decrement()
             }
 
         })
@@ -49,6 +54,8 @@ class RemoteRepository {
     fun getOnAirTv(page: Int): LiveData<List<Tv>> {
         val dataOnAirTv: MutableLiveData<List<Tv>> = MutableLiveData()
 
+        IdlingResource.increment()
+
         val tvResponseCall: Call<TvResponse> =
             ApiClient.getClient().create(ApiService::class.java)
                 .getOnAirTv(page)
@@ -56,6 +63,7 @@ class RemoteRepository {
             override fun onFailure(call: Call<TvResponse>, t: Throwable) {
                 Log.d("Fail", t.toString())
                 dataOnAirTv.value = null
+                IdlingResource.decrement()
             }
 
             override fun onResponse(
@@ -65,6 +73,7 @@ class RemoteRepository {
                 movieResponse.body()?.let {
                     dataOnAirTv.value = it.results
                 }
+                IdlingResource.decrement()
             }
 
         })
@@ -74,6 +83,8 @@ class RemoteRepository {
     fun getMovieById(id: Int): LiveData<Movie> {
         val movieById: MutableLiveData<Movie> = MutableLiveData()
 
+        IdlingResource.increment()
+
         val movieResponseCall: Call<Movie> =
             ApiClient.getClient().create(ApiService::class.java)
                 .getMovieById(id)
@@ -81,6 +92,7 @@ class RemoteRepository {
             override fun onFailure(call: Call<Movie>, t: Throwable) {
                 Log.d("Fail", t.toString())
                 movieById.value = null
+                IdlingResource.decrement()
             }
 
             override fun onResponse(
@@ -89,6 +101,7 @@ class RemoteRepository {
             ) {
                 movieResponse.body()?.let {
                     movieById.value = it
+                    IdlingResource.decrement()
                 }
             }
 
@@ -99,6 +112,8 @@ class RemoteRepository {
     fun getTvById(id: Int): LiveData<Tv> {
         val tvById: MutableLiveData<Tv> = MutableLiveData()
 
+        IdlingResource.increment()
+
         val tvResponseCall: Call<Tv> =
             ApiClient.getClient().create(ApiService::class.java)
                 .getTvById(id)
@@ -106,6 +121,7 @@ class RemoteRepository {
             override fun onFailure(call: Call<Tv>, t: Throwable) {
                 Log.d("Fail", t.toString())
                 tvById.value = null
+                IdlingResource.decrement()
             }
 
             override fun onResponse(
@@ -114,6 +130,7 @@ class RemoteRepository {
             ) {
                 movieResponse.body()?.let {
                     tvById.value = it
+                    IdlingResource.decrement()
                 }
             }
 

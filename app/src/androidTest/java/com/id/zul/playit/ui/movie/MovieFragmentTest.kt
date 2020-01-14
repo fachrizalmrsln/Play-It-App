@@ -2,6 +2,7 @@ package com.id.zul.playit.ui.movie
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -11,7 +12,10 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.id.zul.playit.R
 import com.id.zul.playit.ui.MainActivity
+import com.id.zul.playit.utils.IdlingResource
 import com.id.zul.playit.utils.RecyclerViewItemCountAssertion
+import org.junit.After
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -22,23 +26,26 @@ class MovieFragmentTest {
     @get: Rule
     var activityTestRule = ActivityTestRule(MainActivity::class.java)
 
+    @Before
+    fun setUp() {
+        IdlingRegistry.getInstance().register(IdlingResource.myIdle)
+    }
+
     @Test
     fun testSelectItemBehaviour() {
 
         onView(withId(R.id.rv_movies))
             .check(matches(isDisplayed()))
 
-        delay(2000)
-
         onView(withId(R.id.rv_movies))
             .check(RecyclerViewItemCountAssertion(20))
 
-        delay(3000)
+        delay(2000)
 
         onView(withId(R.id.rv_movies))
             .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(8))
 
-        delay(3000)
+        delay(2000)
 
         onView(withId(R.id.rv_movies))
             .perform(
@@ -53,9 +60,14 @@ class MovieFragmentTest {
         onView(isRoot())
             .perform(ViewActions.pressBack())
 
-        delay(3000)
     }
 
+    @After
+    fun tearDown() {
+        IdlingRegistry.getInstance().register(IdlingResource.myIdle)
+    }
+
+    // i'm keep using delay just for making sure the data show up properly before the other action
     private fun delay(sec: Long) {
         try {
             Thread.sleep(sec)
