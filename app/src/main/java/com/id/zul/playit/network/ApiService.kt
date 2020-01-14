@@ -23,7 +23,7 @@ interface ApiService {
     ): Call<Movie>
 
     @GET("tv/on_the_air?api_key=${Network.API_KEY}")
-    fun getOnAirTv(
+    fun getOnTheAirTv(
         @Query("page") page: Int
     ): Call<TvResponse>
 

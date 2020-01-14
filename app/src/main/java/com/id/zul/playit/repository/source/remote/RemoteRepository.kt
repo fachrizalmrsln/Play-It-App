@@ -1,4 +1,4 @@
-package com.id.zul.playit.repository.source
+package com.id.zul.playit.repository.source.remote
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -58,7 +58,7 @@ class RemoteRepository {
 
         val tvResponseCall: Call<TvResponse> =
             ApiClient.getClient().create(ApiService::class.java)
-                .getOnAirTv(page)
+                .getOnTheAirTv(page)
         tvResponseCall.enqueue(object : Callback<TvResponse> {
             override fun onFailure(call: Call<TvResponse>, t: Throwable) {
                 Log.d("Fail", t.toString())

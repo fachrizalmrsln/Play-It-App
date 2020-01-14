@@ -1,4 +1,4 @@
-package com.id.zul.playit.repository.dummy
+package com.id.zul.playit.repository.source.dummy
 
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv

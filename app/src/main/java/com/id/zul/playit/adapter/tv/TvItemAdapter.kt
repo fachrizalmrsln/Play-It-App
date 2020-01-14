@@ -1,4 +1,4 @@
-package com.id.zul.playit.adapter
+package com.id.zul.playit.adapter.tv
 
 import android.content.Context
 import android.view.LayoutInflater

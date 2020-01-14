@@ -1,7 +1,7 @@
 package com.id.zul.playit.di
 
 import com.id.zul.playit.repository.CatalogRepository
-import com.id.zul.playit.repository.source.RemoteRepository
+import com.id.zul.playit.repository.source.remote.RemoteRepository
 
 object Injection {
     fun provideRepository(): CatalogRepository {

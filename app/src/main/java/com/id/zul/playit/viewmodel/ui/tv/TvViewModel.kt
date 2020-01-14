@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.repository.CatalogRepository
-import com.id.zul.playit.repository.dummy.DummyData
+import com.id.zul.playit.repository.source.dummy.DummyData
 
 class TvViewModel(private val catalogRepository: CatalogRepository) : ViewModel() {
 
