@@ -36,7 +36,7 @@ class TvViewModelTest {
     }
 
     @Test
-    fun getDummyMovie() {
+    fun getTv() {
         dummy = viewModel.dummyTv
 
         data.postValue(dummy)

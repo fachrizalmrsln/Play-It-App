@@ -36,7 +36,7 @@ class MovieViewModelTest {
     }
 
     @Test
-    fun getDummyMovie() {
+    fun getMovie() {
         dummy = viewModel.dummyMovie
 
         data.postValue(dummy)
