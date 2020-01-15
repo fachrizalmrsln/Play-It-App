@@ -1,6 +1,5 @@
 package com.id.zul.playit.ui.detail
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RatingBar
@@ -26,9 +25,7 @@ import org.jetbrains.anko.toast
 
 class DetailActivity : AppCompatActivity() {
 
-    private var dataType: String = "default"
     private lateinit var viewModel: DetailViewModel
-    private var dataId: Int = 0
 
     private lateinit var toolbar: Toolbar
     private lateinit var ivBackDrop: ImageView
@@ -41,6 +38,8 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var rbDetail: RatingBar
     private lateinit var shimmer: SkeletonScreen
 
+    private var dataId: Int = 0
+    private var dataType: String = "default"
     private var dataBackdrop = "default"
     private var dataPoster = "default"
     private var dataTitle = "default"
@@ -75,8 +74,8 @@ class DetailActivity : AppCompatActivity() {
         toolbar = find(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDefaultDisplayHomeAsUpEnabled(true)
     }
 
     private fun initializeViewModel(activity: DetailActivity): DetailViewModel {
@@ -85,14 +84,14 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-        dataType = intent.getStringExtra("identify")!!
         dataId = intent.getIntExtra("data_id", 0)
+        dataType = intent?.getStringExtra("identify").toString()
 
-        if (dataType == "movie") {
+        if (dataType == "movie")
             getDetailMovie(dataId)
-        } else {
+        else
             getDetailTv(dataId)
-        }
+
     }
 
     private fun setShimmer() {
@@ -110,11 +109,11 @@ class DetailActivity : AppCompatActivity() {
             this,
             Observer {
                 if (it == null)
-                    toast("Empty")
+                    toast("Check your internet connection")
                 else {
                     setDataMovie(it)
+                    shimmer.hide()
                 }
-                shimmer.hide()
             }
         )
     }
@@ -125,7 +124,7 @@ class DetailActivity : AppCompatActivity() {
             this,
             Observer {
                 if (it == null)
-                    toast("Empty")
+                    toast("Check your internet connection")
                 else {
                     setDataTv(it)
                     shimmer.hide()
@@ -158,7 +157,6 @@ class DetailActivity : AppCompatActivity() {
         initDataToViews()
     }
 
-    @SuppressLint("SetTextI18n")
     private fun initDataToViews() {
         tvTitle.text = dataTitle
         tvDate.text = dataDate
@@ -186,14 +184,14 @@ class DetailActivity : AppCompatActivity() {
         }
 
         when (dataAge) {
-            "default" -> tvAge.text = "13"
-            "false" -> tvAge.text = "13"
-            else -> tvAge.text = "18"
+            "default" -> tvAge.text = resources.getString(R.string._13)
+            "false" -> tvAge.text = resources.getString(R.string._13)
+            else -> tvAge.text = resources.getString(R.string._18)
         }
 
         when (dataType) {
-            "movie" -> toolbar.title = "Detail Movie"
-            else -> toolbar.title = "Detail Tv Show"
+            "movie" -> toolbar.title = resources.getString(R.string.movie_detail)
+            else -> toolbar.title = resources.getString(R.string.tv_detail)
         }
 
     }

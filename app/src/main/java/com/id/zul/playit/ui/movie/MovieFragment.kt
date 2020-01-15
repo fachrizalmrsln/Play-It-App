@@ -27,14 +27,12 @@ import org.jetbrains.anko.support.v4.toast
 class MovieFragment : Fragment() {
 
     private lateinit var viewModel: MovieViewModel
-
     private lateinit var adapterMovie: MovieItemAdapter
+    private lateinit var shimmer: SkeletonScreen
 
     private var listData: MutableList<Movie> = mutableListOf()
 
     private var page = 1
-
-    private lateinit var shimmer: SkeletonScreen
 
     companion object {
         fun getInstance(): Fragment {
@@ -65,7 +63,7 @@ class MovieFragment : Fragment() {
 
     private fun initializeToolbar() {
         (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar)
-        toolbar.title = "Movies"
+        toolbar.title = resources.getString(R.string.movie_toolbar_title)
     }
 
     private fun initializeViewModel(activity: FragmentActivity): MovieViewModel {
@@ -90,11 +88,11 @@ class MovieFragment : Fragment() {
             this,
             Observer {
                 if (it.isNullOrEmpty())
-                    toast("Empty")
+                    toast("Check your internet connection")
                 else {
                     setDataToViews(it)
+                    shimmer.hide()
                 }
-                shimmer.hide()
             }
         )
     }

@@ -6,9 +6,17 @@
     <string name="item_date">Item Date</string>
     <string name="image_poster">Image Poster</string>
     <string name="_10">10</string>
+    <string name="_13">13</string>
     <string name="_18">18</string>
     <string name="plus">+</string>
     <string name="_15_november_2019">15 November 2019</string>
     <string name="synopsis">Synopsis</string>
     <string name="item_description">Description</string>
+
+    <string name="movie_toolbar_title">Movie Catalog</string>
+    <string name="tv_toolbar_title">Tv Show Catalog</string>
+
+    <string name="movie_detail">Movie Detail</string>
+    <string name="tv_detail">Tv Show Detail</string>
+
 </resources>

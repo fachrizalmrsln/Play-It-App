@@ -27,14 +27,12 @@ import org.jetbrains.anko.support.v4.toast
 class TvFragment : Fragment() {
 
     private lateinit var viewModel: TvViewModel
-
     private lateinit var adapterMovie: TvItemAdapter
+    private lateinit var shimmer: SkeletonScreen
 
     private var listData: MutableList<Tv> = mutableListOf()
 
     private var page = 1
-
-    private lateinit var shimmer: SkeletonScreen
 
     companion object {
         fun getInstance(): Fragment {
@@ -65,7 +63,7 @@ class TvFragment : Fragment() {
 
     private fun initializeToolbar() {
         (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar)
-        toolbar.title = "Tv Show"
+        toolbar.title = resources.getString(R.string.tv_toolbar_title)
     }
 
     private fun initializeViewModel(activity: FragmentActivity): TvViewModel {
@@ -90,11 +88,11 @@ class TvFragment : Fragment() {
             this,
             Observer {
                 if (it.isNullOrEmpty())
-                    toast("Empty")
+                    toast("Check your internet connection")
                 else {
                     setDataToViews(it)
+                    shimmer.hide()
                 }
-                shimmer.hide()
             }
         )
     }
