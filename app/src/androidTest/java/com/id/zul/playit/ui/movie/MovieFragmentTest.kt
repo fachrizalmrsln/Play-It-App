@@ -55,7 +55,7 @@ class MovieFragmentTest {
                 )
             )
 
-        delay(3000)
+        delay(2000)
 
         onView(isRoot())
             .perform(ViewActions.pressBack())

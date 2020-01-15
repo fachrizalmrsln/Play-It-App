@@ -60,7 +60,7 @@ class TvFragmentTest {
                 )
             )
 
-        delay(3000)
+        delay(2000)
 
         onView(isRoot())
             .perform(pressBack())
