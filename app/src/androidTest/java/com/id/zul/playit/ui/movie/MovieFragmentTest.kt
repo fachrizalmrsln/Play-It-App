@@ -40,12 +40,8 @@ class MovieFragmentTest {
         onView(withId(R.id.rv_movies))
             .check(RecyclerViewItemCountAssertion(20))
 
-        delay(2000)
-
         onView(withId(R.id.rv_movies))
             .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(8))
-
-        delay(2000)
 
         onView(withId(R.id.rv_movies))
             .perform(
@@ -55,8 +51,6 @@ class MovieFragmentTest {
                 )
             )
 
-        delay(2000)
-
         onView(isRoot())
             .perform(ViewActions.pressBack())
 
@@ -65,15 +59,6 @@ class MovieFragmentTest {
     @After
     fun tearDown() {
         IdlingRegistry.getInstance().unregister(IdlingResource.myIdle)
-    }
-
-    // i'm keep using delay just for making sure the data show up properly before the other action
-    private fun delay(sec: Long) {
-        try {
-            Thread.sleep(sec)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
     }
 
 }

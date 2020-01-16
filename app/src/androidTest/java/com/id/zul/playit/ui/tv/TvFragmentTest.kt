@@ -37,20 +37,14 @@ class TvFragmentTest {
         onView(withId(R.id.nav_tv))
             .check(matches(isCompletelyDisplayed()))
 
-        delay(2000)
-
         onView(withId(R.id.nav_tv))
             .perform(click())
 
         onView(withId(R.id.rv_tv_show))
             .check(RecyclerViewItemCountAssertion(20))
 
-        delay(2000)
-
         onView(withId(R.id.rv_tv_show))
             .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(8))
-
-        delay(2000)
 
         onView(withId(R.id.rv_tv_show))
             .perform(
@@ -60,26 +54,14 @@ class TvFragmentTest {
                 )
             )
 
-        delay(2000)
-
         onView(isRoot())
             .perform(pressBack())
 
-        delay(2000)
     }
 
     @After
     fun tearDown() {
         IdlingRegistry.getInstance().unregister(IdlingResource.myIdle)
-    }
-
-    // i'm keep using delay just for making sure the data show up properly before the other action
-    private fun delay(sec: Long) {
-        try {
-            Thread.sleep(sec)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
     }
 
 }
