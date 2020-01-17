@@ -106,7 +106,7 @@ class MovieFragment : Fragment() {
                 )
             }
 
-        if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)
+        if (activity?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE)
             rv_movies.layoutManager = GridLayoutManager(context, 4)
         else
             rv_movies.layoutManager = GridLayoutManager(context, 2)

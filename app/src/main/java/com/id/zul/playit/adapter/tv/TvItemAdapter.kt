@@ -34,9 +34,7 @@ class TvItemAdapter(
         )
     }
 
-    override fun getItemCount(): Int {
-        return movie.size
-    }
+    override fun getItemCount() = movie.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         movie[position].let { holder.bindItem(it, listener) }

@@ -105,7 +105,7 @@ class TvFragment : Fragment() {
             )
         }
 
-        if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)
+        if (activity?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE)
             rv_tv_show.layoutManager = GridLayoutManager(context, 4)
         else
             rv_tv_show.layoutManager = GridLayoutManager(context, 2)
