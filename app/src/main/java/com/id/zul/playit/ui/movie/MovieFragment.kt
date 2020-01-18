@@ -67,7 +67,7 @@ class MovieFragment : Fragment() {
     }
 
     private fun initializeViewModel(activity: FragmentActivity): MovieViewModel {
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(MovieViewModel::class.java)
     }
 

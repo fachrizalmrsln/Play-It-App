@@ -67,7 +67,7 @@ class TvFragment : Fragment() {
     }
 
     private fun initializeViewModel(activity: FragmentActivity): TvViewModel {
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(TvViewModel::class.java)
     }
 
