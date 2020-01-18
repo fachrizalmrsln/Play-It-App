@@ -98,13 +98,12 @@ class MovieFragment : Fragment() {
     }
 
     private fun setRecyclerView(view: View) {
-        adapterMovie =
-            MovieItemAdapter(view.context) {
-                startActivity<DetailActivity>(
-                    "identify" to "movie",
-                    "data_id" to it.id
-                )
-            }
+        adapterMovie = MovieItemAdapter(view.context) {
+            startActivity<DetailActivity>(
+                "identify" to "movie",
+                "data_id" to it.id
+            )
+        }
 
         if (activity?.resources?.configuration?.orientation == Configuration.ORIENTATION_LANDSCAPE)
             rv_movies.layoutManager = GridLayoutManager(context, 4)

@@ -21,6 +21,11 @@ object ConvertDate {
         return IDFormat.format(date)
     }
 
+    fun dateFromFavorite(data: String): String {
+        val date = IDFormat.parse(data)!!
+        return onlyYear.format(date)
+    }
+
 }
 
 object ConvertDecimal {

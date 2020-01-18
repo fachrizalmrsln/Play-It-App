@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/view_empty_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_show"/>
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="@dimen/size_100"
+            android:layout_height="@dimen/size_100"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/ic_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/hmmm"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/text_size_22"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:text="@string/there_is_nothing_in_here"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/text_size_16" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_favorite_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/layout_item_list" />
+
+</RelativeLayout>

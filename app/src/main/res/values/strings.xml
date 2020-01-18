@@ -21,5 +21,8 @@
     <string name="favorite">Favorite</string>
     <string name="add_to_favorite">Add to Favorite</string>
     <string name="remove_from_favorite">Remove From Favorite</string>
+    <string name="hmmm">Hmmm . . .</string>
+    <string name="there_is_nothing_in_here">There is nothing here</string>
+    <string name="empty">Empty</string>
 
 </resources>
