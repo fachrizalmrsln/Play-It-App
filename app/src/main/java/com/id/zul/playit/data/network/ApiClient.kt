@@ -10,5 +10,6 @@ object ApiClient {
             .baseUrl(Network.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
     }
 }
