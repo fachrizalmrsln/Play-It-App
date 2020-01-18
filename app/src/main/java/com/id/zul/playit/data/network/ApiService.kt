@@ -1,4 +1,4 @@
-package com.id.zul.playit.network
+package com.id.zul.playit.data.network
 
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.movie.MovieResponse

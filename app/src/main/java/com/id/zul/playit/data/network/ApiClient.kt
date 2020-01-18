@@ -1,4 +1,4 @@
-package com.id.zul.playit.network
+package com.id.zul.playit.data.network
 
 import com.id.zul.playit.utils.Network
 import retrofit2.Retrofit

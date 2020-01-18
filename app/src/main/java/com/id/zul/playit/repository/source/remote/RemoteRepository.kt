@@ -7,8 +7,8 @@ import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.movie.MovieResponse
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.model.tv.TvResponse
-import com.id.zul.playit.network.ApiClient
-import com.id.zul.playit.network.ApiService
+import com.id.zul.playit.data.network.ApiClient
+import com.id.zul.playit.data.network.ApiService
 import com.id.zul.playit.utils.IdlingResource
 import retrofit2.Call
 import retrofit2.Callback
