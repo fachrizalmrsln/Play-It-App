@@ -1,16 +1,20 @@
 package com.id.zul.playit.ui.detail
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
+import com.google.android.material.snackbar.Snackbar
 import com.id.zul.playit.R
+import com.id.zul.playit.model.favorite.FavoriteEntity
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.utils.ConvertDate
@@ -21,6 +25,7 @@ import com.id.zul.playit.viewmodel.ui.detail.DetailViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.jetbrains.anko.find
+import org.jetbrains.anko.textColor
 import org.jetbrains.anko.toast
 
 class DetailActivity : AppCompatActivity() {
@@ -37,8 +42,10 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var tvDescription: TextView
     private lateinit var rbDetail: RatingBar
     private lateinit var shimmer: SkeletonScreen
+    private lateinit var buttonFavorite: Button
 
     private var dataId: Int = 0
+    private var id: Int? = 0
     private var dataType: String = "default"
     private var dataBackdrop = "default"
     private var dataPoster = "default"
@@ -48,6 +55,8 @@ class DetailActivity : AppCompatActivity() {
     private var dataDescription = "default"
     private var dataAge = "default"
 
+    private var favoriteState: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -55,6 +64,8 @@ class DetailActivity : AppCompatActivity() {
         initializeToolbar()
         initializeViews()
         getData()
+
+        buttonFavorite()
     }
 
     private fun initializeViews() {
@@ -66,6 +77,7 @@ class DetailActivity : AppCompatActivity() {
         tvAge = find(R.id.tv_age_detail)
         tvDescription = find(R.id.tv_description_detail)
         rbDetail = find(R.id.rb_detail)
+        buttonFavorite = find(R.id.btn_favorite)
 
         viewModel = initializeViewModel(this)
     }
@@ -87,11 +99,30 @@ class DetailActivity : AppCompatActivity() {
         dataId = intent.getIntExtra("data_id", 0)
         dataType = intent?.getStringExtra("identify").toString()
 
-        if (dataType == "movie")
-            getDetailMovie(dataId)
-        else
-            getDetailTv(dataId)
+        getFavorite(dataId)
 
+        if (!favoriteState) {
+            if (dataType == "movie")
+                getDetailMovie(dataId)
+            else
+                getDetailTv(dataId)
+        }
+    }
+
+    private fun getFavorite(id: Int) {
+        viewModel.getFavoriteById(id).observe(
+            this,
+            Observer {
+                favoriteState = if (it == null) {
+                    stateNotFavorite()
+                    false
+                } else {
+                    stateIsFavorite()
+                    setFavorite(it)
+                    true
+                }
+            }
+        )
     }
 
     private fun setShimmer() {
@@ -157,6 +188,46 @@ class DetailActivity : AppCompatActivity() {
         initDataToViews()
     }
 
+    private fun setFavorite(favoriteEntity: FavoriteEntity) {
+        id = favoriteEntity.id
+        tvTitle.text = favoriteEntity.favoriteTile
+        tvDate.text = favoriteEntity.favoriteDate
+        tvRate.text = favoriteEntity.favoriteRate
+        tvDescription.text = favoriteEntity.favoriteDescription
+
+        rbDetail.rating = favoriteEntity.favoriteRate.toFloat()
+
+        this.let {
+            Picasso
+                .get()
+                .load(favoriteEntity.favoriteBackdrop)
+                .placeholder(R.drawable.place_holder)
+                .centerCrop()
+                .fit()
+                .into(ivBackDrop)
+
+            Picasso
+                .get()
+                .load(favoriteEntity.favoritePoster)
+                .placeholder(R.drawable.place_holder)
+                .centerCrop()
+                .fit()
+                .into(ivPoster)
+        }
+
+        when (favoriteEntity.favoriteAge) {
+            "default" -> tvAge.text = resources.getString(R.string._13)
+            "false" -> tvAge.text = resources.getString(R.string._13)
+            else -> tvAge.text = resources.getString(R.string._18)
+        }
+
+        when (favoriteEntity.favoriteType) {
+            "movie" -> toolbar.title = resources.getString(R.string.movie_detail)
+            else -> toolbar.title = resources.getString(R.string.tv_detail)
+        }
+
+    }
+
     private fun initDataToViews() {
         tvTitle.text = dataTitle
         tvDate.text = dataDate
@@ -196,4 +267,80 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
+    private fun buttonFavorite() {
+        buttonFavorite.setOnClickListener {
+            favoriteState = if (favoriteState) {
+                stateNotFavorite()
+                deleteFavorite()
+                false
+            } else {
+                stateIsFavorite()
+                insertFavorite()
+                true
+            }
+        }
+    }
+
+    private fun insertFavorite() {
+        viewModel.insertFavorite(favoriteEntity())
+        Snackbar.make(
+            view, "Saved to favorite",
+            Snackbar.LENGTH_LONG
+        ).show()
+    }
+
+    private fun deleteFavorite() {
+        viewModel.deleteFavorite(favoriteEntityForDelete())
+        Snackbar.make(
+            view, "Deleted from favorite",
+            Snackbar.LENGTH_LONG
+        ).show()
+    }
+
+    private fun stateNotFavorite() {
+        buttonFavorite.background =
+            ContextCompat.getDrawable(this, R.drawable.favorite_background)
+        buttonFavorite.textColor =
+            ContextCompat.getColor(this, R.color.white)
+        buttonFavorite.text = getString(R.string.add_to_favorite)
+
+    }
+
+    private fun stateIsFavorite() {
+        buttonFavorite.background =
+            ContextCompat.getDrawable(this, R.drawable.unfavorite_background)
+        buttonFavorite.textColor =
+            ContextCompat.getColor(this, R.color.colorPrimary)
+        buttonFavorite.text = getString(R.string.remove_from_favorite)
+
+    }
+
+    private fun favoriteEntity(): FavoriteEntity {
+        return FavoriteEntity(
+            favoriteId = dataId,
+            favoriteType = dataType,
+            favoriteTile = dataTitle,
+            favoriteRate = dataRate,
+            favoriteDate = dataDate,
+            favoriteAge = dataAge,
+            favoritePoster = dataPoster,
+            favoriteBackdrop = dataBackdrop,
+            favoriteDescription = dataDescription
+        )
+    }
+
+    private fun favoriteEntityForDelete(): FavoriteEntity {
+        return FavoriteEntity(
+            id = id,
+            favoriteId = dataId,
+            favoriteType = dataType,
+            favoriteTile = dataTitle,
+            favoriteRate = dataRate,
+            favoriteDate = dataDate,
+            favoriteAge = dataAge,
+            favoritePoster = dataPoster,
+            favoriteBackdrop = dataBackdrop,
+            favoriteDescription = dataDescription
+        )
+    }
 }

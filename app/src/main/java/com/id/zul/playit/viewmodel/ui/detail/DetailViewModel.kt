@@ -2,6 +2,7 @@ package com.id.zul.playit.viewmodel.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.id.zul.playit.model.favorite.FavoriteEntity
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.repository.CatalogRepository
@@ -18,4 +19,14 @@ class DetailViewModel(private val catalogRepository: CatalogRepository) : ViewMo
 
     fun getTvById(id: Int): LiveData<Tv> =
         catalogRepository.getTvById(id)
+
+    fun insertFavorite(favoriteEntity: FavoriteEntity) =
+        catalogRepository.insertFavorite(favoriteEntity)
+
+    fun deleteFavorite(favoriteEntity: FavoriteEntity) =
+        catalogRepository.deleteFavorite(favoriteEntity)
+
+    fun getFavoriteById(id: Int): LiveData<FavoriteEntity> =
+        catalogRepository.getFavoriteById(id)
+
 }
