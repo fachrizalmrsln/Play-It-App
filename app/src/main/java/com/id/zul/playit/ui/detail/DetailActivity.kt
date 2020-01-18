@@ -46,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
 
     private var dataId: Int = 0
     private var id: Int? = 0
-    private var dataType: String = "default"
+    private var dataType = "default"
     private var dataBackdrop = "default"
     private var dataPoster = "default"
     private var dataTitle = "default"
