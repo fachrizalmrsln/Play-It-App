@@ -44,8 +44,8 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var shimmer: SkeletonScreen
     private lateinit var buttonFavorite: Button
 
-    private var dataId: Int = 0
     private var id: Int? = 0
+    private var dataId: Int = 0
     private var dataType = "default"
     private var dataBackdrop = "default"
     private var dataPoster = "default"
