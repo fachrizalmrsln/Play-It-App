@@ -3,16 +3,15 @@ package com.id.zul.playit.repository
 import androidx.lifecycle.LiveData
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
+import com.id.zul.playit.repository.source.remote.RemoteDataSource
 import com.id.zul.playit.repository.source.remote.RemoteRepository
 
 class CatalogRepository(
     private val remoteRepository: RemoteRepository
-) : CatalogDataSource {
+) : RemoteDataSource {
 
     companion object {
-        fun getInstance(
-            remoteRepository: RemoteRepository
-        ): CatalogRepository =
+        fun getInstance(remoteRepository: RemoteRepository): CatalogRepository =
             CatalogRepository(remoteRepository)
     }
 

@@ -1,10 +1,10 @@
-package com.id.zul.playit.repository
+package com.id.zul.playit.repository.source.remote
 
 import androidx.lifecycle.LiveData
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
 
-interface CatalogDataSource {
+interface RemoteDataSource {
 
     fun getNowPlayingMovie(page: Int): LiveData<List<Movie>>
 
