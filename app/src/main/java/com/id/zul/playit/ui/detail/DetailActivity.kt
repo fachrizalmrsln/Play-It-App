@@ -343,4 +343,5 @@ class DetailActivity : AppCompatActivity() {
             favoriteDescription = dataDescription
         )
     }
+
 }
