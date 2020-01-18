@@ -18,5 +18,6 @@
 
     <string name="movie_detail">Movie Detail</string>
     <string name="tv_detail">Tv Show Detail</string>
+    <string name="favorite">Favorite</string>
 
 </resources>
