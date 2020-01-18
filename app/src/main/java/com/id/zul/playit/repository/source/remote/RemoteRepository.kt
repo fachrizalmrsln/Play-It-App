@@ -17,9 +17,7 @@ import retrofit2.Response
 class RemoteRepository {
 
     companion object {
-        fun getInstance(): RemoteRepository {
-            return RemoteRepository()
-        }
+        fun getInstance(): RemoteRepository = RemoteRepository()
     }
 
     fun getNowPlayingMovie(page: Int): LiveData<List<Movie>> {
