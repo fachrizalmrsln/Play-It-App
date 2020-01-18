@@ -12,7 +12,7 @@ import com.id.zul.playit.model.favorite.FavoriteEntity
 )
 abstract class DatabaseInstance : RoomDatabase() {
 
-    abstract fun dataBaseObeject(): DatabaseObject
+    abstract fun dataBaseObject(): DatabaseObject
 
     companion object {
 

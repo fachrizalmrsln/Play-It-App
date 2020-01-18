@@ -79,7 +79,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initializeViewModel(activity: DetailActivity): DetailViewModel {
-        val factory = ViewModelFactory.getInstance()
+        val factory = ViewModelFactory.getInstance(activity.application)
         return ViewModelProviders.of(activity, factory).get(DetailViewModel::class.java)
     }
 

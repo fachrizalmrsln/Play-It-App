@@ -15,7 +15,7 @@ class LocalRepository(context: Context) {
 
     init {
         val database = DatabaseInstance.getDatabase(context)
-        databaseObject = database.dataBaseObeject()
+        databaseObject = database.dataBaseObject()
     }
 
     companion object {
