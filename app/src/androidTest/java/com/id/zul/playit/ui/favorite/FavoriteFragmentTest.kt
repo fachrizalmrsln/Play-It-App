@@ -49,7 +49,7 @@ class FavoriteFragmentTest {
         onView(withId(R.id.rv_movies))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    2,
+                    8,
                     click()
                 )
             )
@@ -102,7 +102,7 @@ class FavoriteFragmentTest {
         onView(withId(R.id.rv_tv_show))
             .perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    2,
+                    8,
                     click()
                 )
             )
