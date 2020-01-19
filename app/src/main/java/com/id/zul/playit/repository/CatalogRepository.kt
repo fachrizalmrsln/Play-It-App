@@ -1,7 +1,8 @@
 package com.id.zul.playit.repository
 
 import androidx.lifecycle.LiveData
-import androidx.paging.DataSource
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.id.zul.playit.model.favorite.FavoriteEntity
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
@@ -41,11 +42,11 @@ class CatalogRepository(
     override fun deleteFavorite(favoriteEntity: FavoriteEntity) =
         localRepository.deleteFavorite(favoriteEntity)
 
-    override fun getFavoriteMovie(): DataSource.Factory<Int, FavoriteEntity> =
-        localRepository.getFavoriteMovie()
+    override fun getFavoriteMovie(): LiveData<PagedList<FavoriteEntity>> =
+        LivePagedListBuilder(localRepository.getFavoriteMovie(), 10).build()
 
-    override fun getFavoriteTv(): DataSource.Factory<Int, FavoriteEntity> =
-        localRepository.getFavoriteTv()
+    override fun getFavoriteTv(): LiveData<PagedList<FavoriteEntity>> =
+        LivePagedListBuilder(localRepository.getFavoriteTv(), 10).build()
 
     override fun getFavoriteById(id: Int): LiveData<FavoriteEntity> =
         localRepository.getFavoriteById(id)
