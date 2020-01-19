@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.id.zul.playit.R
 import com.id.zul.playit.model.favorite.FavoriteEntity
@@ -16,28 +18,17 @@ import org.jetbrains.anko.find
 class FavoriteAdapter(
     private val context: Context,
     private val listener: (FavoriteEntity) -> Unit
-) :
-    RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
+) : PagedListAdapter<FavoriteEntity, FavoriteAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     private var movie: MutableList<FavoriteEntity> = mutableListOf()
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val ivPoster: ImageView = itemView.find(R.id.iv_item_image)
-        private val tvTitle: TextView = itemView.find(R.id.tv_item_title)
-        private val tvDate: TextView = itemView.find(R.id.tv_item_date)
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FavoriteEntity>() {
+            override fun areItemsTheSame(oldItem: FavoriteEntity, newItem: FavoriteEntity) =
+                oldItem.id == newItem.id
 
-        fun bindItem(data: FavoriteEntity, listener: (FavoriteEntity) -> Unit) {
-            tvTitle.text = data.favoriteTile
-            tvDate.text = ConvertDate.dateFromFavorite(data.favoriteDate)
-            itemView.context.let {
-                Picasso
-                    .get()
-                    .load(data.favoritePoster)
-                    .placeholder(R.drawable.place_holder)
-                    .into(ivPoster)
-
-            }
-            itemView.setOnClickListener { listener(data) }
+            override fun areContentsTheSame(oldItem: FavoriteEntity, newItem: FavoriteEntity) =
+                oldItem.id == newItem.id
         }
     }
 
@@ -60,6 +51,26 @@ class FavoriteAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         movie[position].let { holder.bindItem(it, listener) }
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val ivPoster: ImageView = itemView.find(R.id.iv_item_image)
+        private val tvTitle: TextView = itemView.find(R.id.tv_item_title)
+        private val tvDate: TextView = itemView.find(R.id.tv_item_date)
+
+        fun bindItem(data: FavoriteEntity, listener: (FavoriteEntity) -> Unit) {
+            tvTitle.text = data.favoriteTile
+            tvDate.text = ConvertDate.dateFromFavorite(data.favoriteDate)
+            itemView.context.let {
+                Picasso
+                    .get()
+                    .load(data.favoritePoster)
+                    .placeholder(R.drawable.place_holder)
+                    .into(ivPoster)
+
+            }
+            itemView.setOnClickListener { listener(data) }
+        }
     }
 
 }

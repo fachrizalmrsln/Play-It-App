@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
@@ -112,7 +113,7 @@ class FavoriteMovieFragment : Fragment() {
         rv_favorite_movie.adapter = adapter
     }
 
-    private fun setDataToViews(data: List<FavoriteEntity>) {
+    private fun setDataToViews(data: PagedList<FavoriteEntity>) {
         val listData: MutableList<FavoriteEntity> = mutableListOf()
         listData.clear()
         listData.addAll(data)

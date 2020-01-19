@@ -1,6 +1,7 @@
 package com.id.zul.playit.repository.source.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import com.id.zul.playit.model.favorite.FavoriteEntity
 
 interface LocalDataSource {
@@ -9,9 +10,9 @@ interface LocalDataSource {
 
     fun deleteFavorite(favoriteEntity: FavoriteEntity)
 
-    fun getFavoriteMovie(): LiveData<List<FavoriteEntity>>
+    fun getFavoriteMovie(): DataSource.Factory<Int, FavoriteEntity>
 
-    fun getFavoriteTv(): LiveData<List<FavoriteEntity>>
+    fun getFavoriteTv(): DataSource.Factory<Int, FavoriteEntity>
 
     fun getFavoriteById(id: Int): LiveData<FavoriteEntity>
 

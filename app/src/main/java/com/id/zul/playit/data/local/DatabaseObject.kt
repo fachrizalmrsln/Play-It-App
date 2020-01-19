@@ -1,6 +1,7 @@
 package com.id.zul.playit.data.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -17,10 +18,10 @@ interface DatabaseObject {
     fun deleteFavorite(favoriteEntity: FavoriteEntity): Int
 
     @Query("Select * from favorite where favoriteType = 'movie'")
-    fun getAllFavoriteMovie(): LiveData<List<FavoriteEntity>>
+    fun getAllFavoriteMovie(): DataSource.Factory<Int, FavoriteEntity>
 
     @Query("Select * from favorite where favoriteType = 'tv'")
-    fun getAllFavoriteTv(): LiveData<List<FavoriteEntity>>
+    fun getAllFavoriteTv(): DataSource.Factory<Int, FavoriteEntity>
 
     @Query("Select * from favorite where favoriteId = :id")
     fun getFavoriteById(id: Int): LiveData<FavoriteEntity>
