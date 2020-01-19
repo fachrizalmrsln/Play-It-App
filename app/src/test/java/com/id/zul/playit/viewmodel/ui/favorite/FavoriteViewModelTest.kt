@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.paging.PagedList
 import com.id.zul.playit.model.favorite.FavoriteEntity
-import com.id.zul.playit.repository.CatalogRepository
+import com.id.zul.playit.repository.CatalogueRepository
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -19,7 +19,7 @@ class FavoriteViewModelTest {
     val instantTaskExecutorRule: InstantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: FavoriteViewModel
-    private lateinit var catalogRepository: CatalogRepository
+    private lateinit var catalogueRepository: CatalogueRepository
 
     private lateinit var data: MutableLiveData<PagedList<FavoriteEntity>>
 
@@ -28,8 +28,8 @@ class FavoriteViewModelTest {
 
     @Before
     fun setUp() {
-        catalogRepository = mock(CatalogRepository::class.java)
-        viewModel = FavoriteViewModel(catalogRepository)
+        catalogueRepository = mock(CatalogueRepository::class.java)
+        viewModel = FavoriteViewModel(catalogueRepository)
 
         data = MutableLiveData()
 
@@ -41,7 +41,7 @@ class FavoriteViewModelTest {
     fun getFavoriteMovie() {
         data.postValue(pagedData)
 
-        `when`(catalogRepository.getFavoriteMovie()).thenReturn(data)
+        `when`(catalogueRepository.getFavoriteMovie()).thenReturn(data)
 
         viewModel.getFavoriteMovie().observeForever(observer)
         verify(observer).onChanged(pagedData)
@@ -53,7 +53,7 @@ class FavoriteViewModelTest {
     fun getFavoriteTv() {
         data.postValue(pagedData)
 
-        `when`(catalogRepository.getFavoriteTv()).thenReturn(data)
+        `when`(catalogueRepository.getFavoriteTv()).thenReturn(data)
 
         viewModel.getFavoriteTv().observeForever(observer)
         verify(observer).onChanged(pagedData)

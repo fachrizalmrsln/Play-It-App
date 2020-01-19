@@ -11,7 +11,7 @@ import com.id.zul.playit.repository.source.local.LocalRepository
 import com.id.zul.playit.repository.source.remote.RemoteDataSource
 import com.id.zul.playit.repository.source.remote.RemoteRepository
 
-class CatalogRepository(
+class CatalogueRepository(
     private val remoteRepository: RemoteRepository,
     private val localRepository: LocalRepository
 ) : RemoteDataSource, LocalDataSource {
@@ -20,8 +20,8 @@ class CatalogRepository(
         fun getInstance(
             remoteRepository: RemoteRepository,
             localRepository: LocalRepository
-        ): CatalogRepository =
-            CatalogRepository(remoteRepository, localRepository)
+        ): CatalogueRepository =
+            CatalogueRepository(remoteRepository, localRepository)
     }
 
     override fun getNowPlayingMovie(page: Int): LiveData<List<Movie>> =

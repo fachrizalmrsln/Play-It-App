@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.id.zul.playit.model.tv.Tv
-import com.id.zul.playit.repository.CatalogRepository
+import com.id.zul.playit.repository.CatalogueRepository
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -18,7 +18,7 @@ class TvViewModelTest {
     val instantTaskExecutorRule: InstantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: TvViewModel
-    private lateinit var catalogRepository: CatalogRepository
+    private lateinit var catalogueRepository: CatalogueRepository
 
     private lateinit var data: MutableLiveData<List<Tv>>
     private lateinit var dummy: List<Tv>
@@ -27,8 +27,8 @@ class TvViewModelTest {
 
     @Before
     fun setUp() {
-        catalogRepository = mock(CatalogRepository::class.java)
-        viewModel = TvViewModel(catalogRepository)
+        catalogueRepository = mock(CatalogueRepository::class.java)
+        viewModel = TvViewModel(catalogueRepository)
 
         data = MutableLiveData()
 
@@ -41,7 +41,7 @@ class TvViewModelTest {
 
         data.postValue(dummy)
 
-        `when`(catalogRepository.getOnAirTv(1)).thenReturn(data)
+        `when`(catalogueRepository.getOnAirTv(1)).thenReturn(data)
 
         viewModel.getOnAir(1).observeForever(observer)
         verify(observer).onChanged(dummy)

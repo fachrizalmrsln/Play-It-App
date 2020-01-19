@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
-import com.id.zul.playit.repository.CatalogRepository
+import com.id.zul.playit.repository.CatalogueRepository
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -18,7 +18,7 @@ class DetailViewModelTest {
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: DetailViewModel
-    private lateinit var catalogRepository: CatalogRepository
+    private lateinit var catalogueRepository: CatalogueRepository
 
     private lateinit var dataMovie: MutableLiveData<Movie>
     private lateinit var dataTv: MutableLiveData<Tv>
@@ -43,8 +43,8 @@ class DetailViewModelTest {
         idTvTest = 4057
         idTvDummy = 84661
 
-        catalogRepository = mock(CatalogRepository::class.java)
-        viewModel = DetailViewModel(catalogRepository)
+        catalogueRepository = mock(CatalogueRepository::class.java)
+        viewModel = DetailViewModel(catalogueRepository)
 
         dataMovie = MutableLiveData()
         dataTv = MutableLiveData()
@@ -59,7 +59,7 @@ class DetailViewModelTest {
 
         dataMovie.postValue(dummyMovieById)
 
-        `when`(catalogRepository.getMovieById(idMovieTest)).thenReturn(dataMovie)
+        `when`(catalogueRepository.getMovieById(idMovieTest)).thenReturn(dataMovie)
 
         viewModel.getMovieById(idMovieTest).observeForever(observerMovie)
         verify(observerMovie).onChanged(dummyMovieById)
@@ -71,7 +71,7 @@ class DetailViewModelTest {
 
         dataTv.postValue(dummyTvById)
 
-        `when`(catalogRepository.getTvById(idTvTest)).thenReturn(dataTv)
+        `when`(catalogueRepository.getTvById(idTvTest)).thenReturn(dataTv)
 
         viewModel.getTvById(idTvTest).observeForever(observerTv)
         verify(observerTv).onChanged(dummyTvById)

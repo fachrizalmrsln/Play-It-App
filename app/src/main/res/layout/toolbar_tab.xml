@@ -23,13 +23,11 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/ti_movie_favorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/movies" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/ti_tv_favorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_show" />

@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.id.zul.playit.model.movie.Movie
-import com.id.zul.playit.repository.CatalogRepository
+import com.id.zul.playit.repository.CatalogueRepository
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -18,7 +18,7 @@ class MovieViewModelTest {
     val instantTaskExecutorRule: InstantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: MovieViewModel
-    private lateinit var catalogRepository: CatalogRepository
+    private lateinit var catalogueRepository: CatalogueRepository
 
     private lateinit var data: MutableLiveData<List<Movie>>
     private lateinit var dummy: List<Movie>
@@ -27,8 +27,8 @@ class MovieViewModelTest {
 
     @Before
     fun setUp() {
-        catalogRepository = mock(CatalogRepository::class.java)
-        viewModel = MovieViewModel(catalogRepository)
+        catalogueRepository = mock(CatalogueRepository::class.java)
+        viewModel = MovieViewModel(catalogueRepository)
 
         data = MutableLiveData()
 
@@ -41,7 +41,7 @@ class MovieViewModelTest {
 
         data.postValue(dummy)
 
-        `when`(catalogRepository.getNowPlayingMovie(1)).thenReturn(data)
+        `when`(catalogueRepository.getNowPlayingMovie(1)).thenReturn(data)
 
         viewModel.getNowPlaying(1).observeForever(observer)
         verify(observer).onChanged(dummy)
