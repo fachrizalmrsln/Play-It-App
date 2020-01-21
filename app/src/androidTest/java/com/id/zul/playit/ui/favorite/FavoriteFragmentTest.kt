@@ -64,21 +64,6 @@ class FavoriteFragmentTest {
         onView(withId(R.id.nav_favorite))
             .perform(click())
 
-        onView(withId(R.id.rv_favorite_movie))
-            .perform(
-                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    0,
-                    click()
-                )
-            )
-
-        onView(withId(R.id.btn_favorite))
-            .check(matches(isDisplayed()))
-            .perform(click())
-
-        onView(ViewMatchers.isRoot())
-            .perform(ViewActions.pressBack())
-
     }
 
     @Test
@@ -122,21 +107,6 @@ class FavoriteFragmentTest {
 
         onView(withId(R.id.vp_favorite))
             .perform(swipeLeft())
-
-        onView(withId(R.id.rv_favorite_tv))
-            .perform(
-                RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(
-                    0,
-                    click()
-                )
-            )
-
-        onView(withId(R.id.btn_favorite))
-            .check(matches(isDisplayed()))
-            .perform(click())
-
-        onView(ViewMatchers.isRoot())
-            .perform(ViewActions.pressBack())
 
     }
 
