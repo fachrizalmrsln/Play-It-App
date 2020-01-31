@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.id.zul.playit.R
+import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.utils.ConvertDate
 import com.id.zul.playit.utils.Network
@@ -19,11 +20,16 @@ class TvItemAdapter(
     private val listener: (Tv) -> Unit
 ) : RecyclerView.Adapter<TvItemAdapter.ViewHolder>() {
 
-    private var movie: MutableList<Tv> = mutableListOf()
+    private var tv: MutableList<Tv> = mutableListOf()
 
-    fun setData(data: List<Tv>) {
-        movie.clear()
-        movie.addAll(data)
+    fun onReplace(data: List<Tv>) {
+        tv.clear()
+        tv.addAll(data)
+        notifyDataSetChanged()
+    }
+
+    fun onUpdate(data: List<Tv>){
+        tv.addAll(data)
         notifyDataSetChanged()
     }
 
@@ -34,10 +40,10 @@ class TvItemAdapter(
         )
     }
 
-    override fun getItemCount() = movie.size
+    override fun getItemCount() = tv.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        movie[position].let { holder.bindItem(it, listener) }
+        tv[position].let { holder.bindItem(it, listener) }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

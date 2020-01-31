@@ -15,24 +15,22 @@ import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.tv.TvItemAdapter
-import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.ui.detail.DetailActivity
+import com.id.zul.playit.utils.EndlessScrollListener
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import com.id.zul.playit.viewmodel.ui.tv.TvViewModel
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.jetbrains.anko.support.v4.startActivity
-import org.jetbrains.anko.support.v4.toast
 
 class TvFragment : Fragment() {
 
     private lateinit var viewModel: TvViewModel
-    private lateinit var adapterMovie: TvItemAdapter
+    private lateinit var adapterTv: TvItemAdapter
     private lateinit var shimmer: SkeletonScreen
 
-    private var listData: MutableList<Tv> = mutableListOf()
-
     private var page = 1
+    private var offset = 0
 
     companion object {
         fun getInstance(): Fragment {
@@ -56,7 +54,9 @@ class TvFragment : Fragment() {
             viewModel = initializeViewModel(requireActivity())
             setRecyclerView(view)
 
-            getMovie()
+            setShimmer()
+
+            getTv(page)
         }
 
     }
@@ -73,7 +73,7 @@ class TvFragment : Fragment() {
 
     private fun setShimmer() {
         shimmer = Skeleton.bind(rv_tv_show)
-            .adapter(adapterMovie)
+            .adapter(adapterTv)
             .load(R.layout.skeleton_item_list)
             .color(R.color.shimmerColor)
             .angle(45)
@@ -82,23 +82,23 @@ class TvFragment : Fragment() {
             .show()
     }
 
-    private fun getMovie() {
-        setShimmer()
+    private fun getTv(page: Int) {
         viewModel.getOnAir(page).observe(
             this,
             Observer {
-                if (it.isNullOrEmpty())
-                    toast("Check your internet connection")
-                else {
-                    setDataToViews(it)
+                if (offset == 0) {
+                    shimmer.show()
+                    adapterTv.onReplace(it)
                     shimmer.hide()
+                } else {
+                    adapterTv.onUpdate(it)
                 }
             }
         )
     }
 
     private fun setRecyclerView(view: View) {
-        adapterMovie = TvItemAdapter(view.context) {
+        adapterTv = TvItemAdapter(view.context) {
             startActivity<DetailActivity>(
                 "identify" to "tv",
                 "data_id" to it.id
@@ -110,13 +110,13 @@ class TvFragment : Fragment() {
         else
             rv_tv_show.layoutManager = GridLayoutManager(context, 2)
 
-        rv_tv_show.adapter = adapterMovie
-    }
-
-    private fun setDataToViews(data: List<Tv>) {
-        listData.clear()
-        listData.addAll(data)
-        adapterMovie.setData(listData)
+        rv_tv_show.adapter = adapterTv
+        rv_tv_show.clearOnScrollListeners()
+        rv_tv_show.addOnScrollListener(EndlessScrollListener {
+            offset += 20
+            page += 1
+            getTv(page)
+        })
     }
 
 }

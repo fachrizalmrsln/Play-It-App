@@ -21,8 +21,13 @@ class MovieItemAdapter(
 
     private var movie: MutableList<Movie> = mutableListOf()
 
-    fun setData(data: List<Movie>) {
+    fun onReplace(data: List<Movie>) {
         movie.clear()
+        movie.addAll(data)
+        notifyDataSetChanged()
+    }
+
+    fun onUpdate(data: List<Movie>){
         movie.addAll(data)
         notifyDataSetChanged()
     }

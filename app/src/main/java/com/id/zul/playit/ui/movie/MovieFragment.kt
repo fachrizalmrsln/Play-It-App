@@ -15,8 +15,8 @@ import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
 import com.id.zul.playit.R
 import com.id.zul.playit.adapter.movie.MovieItemAdapter
-import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.ui.detail.DetailActivity
+import com.id.zul.playit.utils.EndlessScrollListener
 import com.id.zul.playit.viewmodel.factory.ViewModelFactory
 import com.id.zul.playit.viewmodel.ui.movie.MovieViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
@@ -30,9 +30,8 @@ class MovieFragment : Fragment() {
     private lateinit var adapterMovie: MovieItemAdapter
     private lateinit var shimmer: SkeletonScreen
 
-    private var listData: MutableList<Movie> = mutableListOf()
-
     private var page = 1
+    private var offset = 0
 
     companion object {
         fun getInstance(): Fragment {
@@ -56,7 +55,9 @@ class MovieFragment : Fragment() {
             viewModel = initializeViewModel(requireActivity())
             setRecyclerView(view)
 
-            getMovie()
+            setShimmer()
+
+            getMovie(page)
         }
 
     }
@@ -82,16 +83,20 @@ class MovieFragment : Fragment() {
             .show()
     }
 
-    private fun getMovie() {
-        setShimmer()
+    private fun getMovie(page: Int) {
         viewModel.getNowPlaying(page).observe(
             this,
             Observer {
                 if (it.isNullOrEmpty())
                     toast("Check your internet connection")
                 else {
-                    setDataToViews(it)
-                    shimmer.hide()
+                    if (offset == 0) {
+                        shimmer.show()
+                        adapterMovie.onReplace(it)
+                        shimmer.hide()
+                    } else {
+                        adapterMovie.onUpdate(it)
+                    }
                 }
             }
         )
@@ -111,12 +116,12 @@ class MovieFragment : Fragment() {
             rv_movies.layoutManager = GridLayoutManager(context, 2)
 
         rv_movies.adapter = adapterMovie
-    }
-
-    private fun setDataToViews(data: List<Movie>) {
-        listData.clear()
-        listData.addAll(data)
-        adapterMovie.setData(listData)
+        rv_movies.clearOnScrollListeners()
+        rv_movies.addOnScrollListener(EndlessScrollListener {
+            offset += 20
+            page += 1
+            getMovie(page)
+        })
     }
 
 }
