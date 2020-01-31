@@ -27,7 +27,7 @@ class MovieItemAdapter(
         notifyDataSetChanged()
     }
 
-    fun onUpdate(data: List<Movie>){
+    fun onUpdate(data: List<Movie>) {
         movie.addAll(data)
         notifyDataSetChanged()
     }

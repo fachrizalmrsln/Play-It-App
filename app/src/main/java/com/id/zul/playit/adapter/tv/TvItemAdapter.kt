@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.id.zul.playit.R
-import com.id.zul.playit.model.movie.Movie
 import com.id.zul.playit.model.tv.Tv
 import com.id.zul.playit.utils.ConvertDate
 import com.id.zul.playit.utils.Network
@@ -28,7 +27,7 @@ class TvItemAdapter(
         notifyDataSetChanged()
     }
 
-    fun onUpdate(data: List<Tv>){
+    fun onUpdate(data: List<Tv>) {
         tv.addAll(data)
         notifyDataSetChanged()
     }
