@@ -77,7 +77,7 @@ class MovieFragment : Fragment() {
             .adapter(adapterMovie)
             .load(R.layout.skeleton_item_list)
             .color(R.color.shimmerColor)
-            .angle(45)
+            .angle(30)
             .frozen(false)
             .duration(1000)
             .show()
